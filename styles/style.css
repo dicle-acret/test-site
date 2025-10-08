@@ -1,0 +1,161 @@
+html {
+  font-size: 10px; /* px は「ピクセル」 (pixels) の意味。ベースフォントサイズは 10 ピクセルの高さになった */
+  font-family:
+    "Tangerine", cursive;/* これが Google フォントから取得した残りの出力になるはず。 */
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+
+h2 {
+  font-size: 45px;
+}
+h3 {
+  font-size: 30px;
+}
+
+p,
+li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+html {
+  background-color: #00539f;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #ff9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+  text-shadow: 3px 3px 1px black;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+ #button {
+        position: relative;
+        display: inline-block;
+        padding: 15px 30px;
+        border: none;
+        background-color: white;
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        overflow: hidden;
+    }
+    
+    #button:hover {
+        color: #003d7a;
+    }
+    
+    /* Text switching styles */
+    #button .japanese,
+    #button .english {
+        display: inline-block;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    #button .english {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) translateY(20px);
+        opacity: 0;
+        white-space: nowrap;
+    }
+    
+    #button:hover .japanese {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    
+    #button:hover .english {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 1;
+    }
+    
+    /* Top border - draws from left to right */
+    #button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #0066cc;
+        transition: width 0.3s ease;
+        z-index: 1;
+    }
+    
+    /* Bottom border - draws from right to left */
+    #button::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 2px;
+        background-color: #0066cc;
+        transition: width 0.3s ease 0.3s;
+        z-index: 1;
+    }
+    
+    /* Right border - draws from top to bottom */
+    #button .japanese::before,
+    #button .english::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        right: -30px;
+        width: 2px;
+        height: 0;
+        background-color: #0066cc;
+        transition: height 0.3s ease 0.15s;
+    }
+    
+    /* Left border - draws from bottom to top */
+    #button .japanese::after,
+    #button .english::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: -30px;
+        width: 2px;
+        height: 0;
+        background-color: #0066cc;
+        transition: height 0.3s ease 0.45s;
+    }
+    
+    /* Hover states - trigger the animations */
+    #button:hover::before,
+    #button:hover::after {
+        width: 100%;
+    }
+    
+    #button:hover .japanese::before,
+    #button:hover .japanese::after,
+    #button:hover .english::before,
+    #button:hover .english::after {
+        height: calc(100% + 30px);
+    }
