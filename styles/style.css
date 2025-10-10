@@ -1,162 +1,242 @@
 html {
-  font-size: 10px; /* px は「ピクセル」 (pixels) の意味。ベースフォントサイズは 10 ピクセルの高さになった */
-  font-family:
-    "Tangerine", cursive;/* これが Google フォントから取得した残りの出力になるはず。 */
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 600px;
 }
 
-h1 {
-  font-size: 60px;
+.page-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 0px;
+    font-size: 14px;
+}
+
+p{
+    line-height: 2.5;
+    text-indent: 30px;
+}
+
+.p-no-indent{
+    padding-left: 30px;
+    text-indent: 0px;
+
+}
+
+
+.title {
+    background-color: #d5e4ff;
+    padding: 20px;
+    border-left: 8px solid #1a3a7d;
+}
+
+.subtitle {
+    background-color: #f0f0f0;
+    padding: 5px 20px;
+    border-left: 8px solid #1a3a7d;
+    border-bottom: 4px solid rgb(172, 172, 172);
+    margin-top: 60px;
+}
+
+.subtitle-small {
+    padding: 5px 0px;
+    border-bottom: 2px solid rgb(172, 172, 172);
+}
+
+.list-sub {
+    padding-left: 70px;
+}
+
+.contents-wrapper {
+    position: relative;
+    margin: 40px 0px;
+}
+
+.contents {
+    position: relative;
+    padding: 20px 20px;
+    background-color: white;
+}
+
+/* Top-left corner */
+.contents::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 80px;
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+}
+
+/* Bottom-right corner */
+.contents-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 80px;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    z-index: 1;
+}
+
+.title-wrapper {
+    position: relative;
+    margin: 40px 0px;
+
+}
+
+.title-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    height: 80px;
+    border-bottom: 2px solid #1a3a7d;;
+    z-index: 1;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    background-color: white;
+}
+
+.schedule-table thead {
+    background-color: #d9d9d9;
+}
+
+.schedule-table th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.schedule-table td {
+    padding: 20px;
+    border: 1px solid #ccc;
+    vertical-align: center;
+}
+
+/* First column (回) */
+.schedule-table td:first-child {
+    text-align: center;
+    font-weight: bold;
+    width: 60px;
+}
+
+/* Second column (開催日時) */
+.schedule-table td:nth-child(2) {
+    width: 0.2;
+}
+
+/* Third column (セミナーテーマ・講師) */
+.schedule-table td:nth-child(3) {
+    width: 0.5;
+    line-height: 1.6;
+}
+
+/* Fourth column (会場) */
+.schedule-table td:nth-child(4) {
+    width: 0.3;
+}
+
+
+.img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    padding-left: 30px;
+    width: 200px;
+    height: 200px;
+}
+
+.img-seminar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-text {
+    margin: 0px;
+    padding: 0px;
+    line-height: 1;
+}
+
+.title-with-lines {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 60px;
+}
+
+
+.title-with-lines::after {
+  content: none;
+  flex: 1;
+  height: 1px;
+  background-color: #333;
+}
+
+.icon-box {
+  display: inline-block;
+  background-color: #a51515;
+  color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 80px;
+  margin: auto;
+  vertical-align: middle;
   text-align: center;
 }
 
-
-h2 {
-  font-size: 45px;
-}
-h3 {
-  font-size: 30px;
+.info-box {
+    border: 1px solid #c4c4c4;
+    margin-top: 40px;
 }
 
-p,
-li {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 2;
-  letter-spacing: 1px;
+.contact-title {
+    background-color: #f0f0f0;
+    padding: 10px; 
+    padding-left: 30px;
 }
 
-html {
-  background-color: #00539f;
+.others-info-links {
+    display: flex;
+    flex-direction: row;
+   
+
 }
 
-body {
-  width: 600px;
-  margin: 0 auto;
-  background-color: #ff9500;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
+.others-info-title {
+    padding: 10px; 
+    padding-left: 30px;
 }
 
-h1 {
-  margin: 0;
-  padding: 20px 0;
-  color: #00539f;
-  text-shadow: 3px 3px 1px black;
+.hover-liner::after {
+    content: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+
 }
 
-img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: 200px;
+.hover-liner::after {
+    width: 100%;
 }
-
- #button {
-        position: relative;
-        display: inline-block;
-        padding: 15px 30px;
-        border: none;
-        background-color: white;
-        color: #0066cc;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 16px;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        overflow: hidden;
-    }
-    
-    #button:hover {
-        color: #003d7a;
-    }
-    
-    /* Text switching styles */
-    #button .japanese,
-    #button .english {
-        display: inline-block;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    
-    #button .english {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) translateY(20px);
-        opacity: 0;
-        white-space: nowrap;
-    }
-    
-    #button:hover .japanese {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    
-    #button:hover .english {
-        transform: translate(-50%, -50%) translateY(0);
-        opacity: 1;
-    }
-    
-    /* Top border - draws from left to right */
-    #button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: #0066cc;
-        transition: width 0.3s ease;
-        z-index: 1;
-    }
-    
-    /* Bottom border - draws from right to left */
-    #button::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 0;
-        height: 2px;
-        background-color: #0066cc;
-        transition: width 0.3s ease 0.3s;
-        z-index: 1;
-    }
-    
-    /* Right border - draws from top to bottom */
-    #button .japanese::before,
-    #button .english::before {
-        content: '';
-        position: absolute;
-        top: -15px;
-        right: -30px;
-        width: 2px;
-        height: 0;
-        background-color: #0066cc;
-        transition: height 0.3s ease 0.15s;
-    }
-    
-    /* Left border - draws from bottom to top */
-    #button .japanese::after,
-    #button .english::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: -30px;
-        width: 2px;
-        height: 0;
-        background-color: #0066cc;
-        transition: height 0.3s ease 0.45s;
-    }
-    
-    /* Hover states - trigger the animations */
-    #button:hover::before,
-    #button:hover::after {
-        width: 100%;
-    }
-    
-    #button:hover .japanese::before,
-    #button:hover .japanese::after,
-    #button:hover .english::before,
-    #button:hover .english::after {
-        height: calc(100% + 30px);
-    }
+            
+            
